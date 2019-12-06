@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package RTLSProtocol;
+
+message Trackable {
+    int32 id = 1; // ID unique to device; could be unknown (-1)
+    bytes cuid = 2; // unique 128-bit ID used only for tracking
+    string name = 3; // e.g. Serial Number
+    uint64 frame_ID = 10;
+    uint64 timestamp = 11; // Unix timestamp in milliseconds
+    bytes context = 12; // variable length field for any extra information
+
+    message Position {
+        double x = 1;
+        double y = 2;
+        double z = 3;
+    }
+
+    Position position = 4;
+
+    message Orientation {
+        double x = 1;
+        double y = 2;
+        double z = 3;
+        double w = 4;
+    }
+
+    Orientation orientation = 5;
+
+    message Velocity {
+        float x = 1;
+        float y = 2;
+        float z = 3;
+    }
+
+    Velocity velocity = 6;
+
+    message Acceleration {
+        float x = 1;
+        float y = 2;
+        float z = 3;
+    }
+
+    Acceleration acceleration = 7;
+
+    message AngularVelocity {
+        float x = 1;
+        float y = 2;
+        float z = 3;
+    }
+
+    AngularVelocity angular_velocity = 8;
+
+    message AngularAcceleration {
+        float x = 1;
+        float y = 2;
+        float z = 3;
+    }
+
+    AngularAcceleration angular_acceleration = 9;
+}
+
+message TrackableFrame {
+    uint64 frame_ID = 1;
+    uint64 timestamp = 2;
+    repeated Trackable trackables = 3;
+}
