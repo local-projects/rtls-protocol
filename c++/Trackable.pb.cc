@@ -239,6 +239,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Trackable_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, frame_id_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, timestamp_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, context_),
+  PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, children_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, position_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, orientation_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::Trackable, velocity_),
@@ -253,6 +254,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Trackable_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::TrackableFrame, frame_id_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::TrackableFrame, timestamp_),
   PROTOBUF_FIELD_OFFSET(::RTLSProtocol::TrackableFrame, trackables_),
+  PROTOBUF_FIELD_OFFSET(::RTLSProtocol::TrackableFrame, context_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::RTLSProtocol::Trackable_Position)},
@@ -262,7 +264,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 33, -1, sizeof(::RTLSProtocol::Trackable_AngularVelocity)},
   { 41, -1, sizeof(::RTLSProtocol::Trackable_AngularAcceleration)},
   { 49, -1, sizeof(::RTLSProtocol::Trackable)},
-  { 66, -1, sizeof(::RTLSProtocol::TrackableFrame)},
+  { 67, -1, sizeof(::RTLSProtocol::TrackableFrame)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -277,29 +279,31 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_Trackable_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017Trackable.proto\022\014RTLSProtocol\"\207\006\n\tTrac"
+  "\n\017Trackable.proto\022\014RTLSProtocol\"\262\006\n\tTrac"
   "kable\022\n\n\002id\030\001 \001(\005\022\014\n\004cuid\030\002 \001(\014\022\014\n\004name\030"
   "\003 \001(\t\022\020\n\010frame_ID\030\n \001(\004\022\021\n\ttimestamp\030\013 \001"
-  "(\004\022\017\n\007context\030\014 \001(\014\0222\n\010position\030\004 \001(\0132 ."
-  "RTLSProtocol.Trackable.Position\0228\n\013orien"
-  "tation\030\005 \001(\0132#.RTLSProtocol.Trackable.Or"
-  "ientation\0222\n\010velocity\030\006 \001(\0132 .RTLSProtoc"
-  "ol.Trackable.Velocity\022:\n\014acceleration\030\007 "
-  "\001(\0132$.RTLSProtocol.Trackable.Acceleratio"
-  "n\022A\n\020angular_velocity\030\010 \001(\0132\'.RTLSProtoc"
-  "ol.Trackable.AngularVelocity\022I\n\024angular_"
-  "acceleration\030\t \001(\0132+.RTLSProtocol.Tracka"
-  "ble.AngularAcceleration\032+\n\010Position\022\t\n\001x"
-  "\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\0329\n\013Orientat"
-  "ion\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022\t\n\001"
-  "w\030\004 \001(\001\032+\n\010Velocity\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001("
-  "\002\022\t\n\001z\030\003 \001(\002\032/\n\014Acceleration\022\t\n\001x\030\001 \001(\002\022"
-  "\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\0322\n\017AngularVelocity"
-  "\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\0326\n\023Ang"
-  "ularAcceleration\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t"
-  "\n\001z\030\003 \001(\002\"b\n\016TrackableFrame\022\020\n\010frame_ID\030"
-  "\001 \001(\004\022\021\n\ttimestamp\030\002 \001(\004\022+\n\ntrackables\030\003"
-  " \003(\0132\027.RTLSProtocol.Trackableb\006proto3"
+  "(\004\022\017\n\007context\030\014 \001(\014\022)\n\010children\030\r \003(\0132\027."
+  "RTLSProtocol.Trackable\0222\n\010position\030\004 \001(\013"
+  "2 .RTLSProtocol.Trackable.Position\0228\n\013or"
+  "ientation\030\005 \001(\0132#.RTLSProtocol.Trackable"
+  ".Orientation\0222\n\010velocity\030\006 \001(\0132 .RTLSPro"
+  "tocol.Trackable.Velocity\022:\n\014acceleration"
+  "\030\007 \001(\0132$.RTLSProtocol.Trackable.Accelera"
+  "tion\022A\n\020angular_velocity\030\010 \001(\0132\'.RTLSPro"
+  "tocol.Trackable.AngularVelocity\022I\n\024angul"
+  "ar_acceleration\030\t \001(\0132+.RTLSProtocol.Tra"
+  "ckable.AngularAcceleration\032+\n\010Position\022\t"
+  "\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\0329\n\013Orien"
+  "tation\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022"
+  "\t\n\001w\030\004 \001(\001\032+\n\010Velocity\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002"
+  " \001(\002\022\t\n\001z\030\003 \001(\002\032/\n\014Acceleration\022\t\n\001x\030\001 \001"
+  "(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\0322\n\017AngularVeloc"
+  "ity\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\0326\n\023"
+  "AngularAcceleration\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001("
+  "\002\022\t\n\001z\030\003 \001(\002\"s\n\016TrackableFrame\022\020\n\010frame_"
+  "ID\030\001 \001(\004\022\021\n\ttimestamp\030\002 \001(\004\022+\n\ntrackable"
+  "s\030\003 \003(\0132\027.RTLSProtocol.Trackable\022\017\n\007cont"
+  "ext\030\004 \001(\014b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Trackable_2eproto_deps[1] = {
 };
@@ -316,7 +320,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Tra
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Trackable_2eproto_once;
 static bool descriptor_table_Trackable_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Trackable_2eproto = {
-  &descriptor_table_Trackable_2eproto_initialized, descriptor_table_protodef_Trackable_2eproto, "Trackable.proto", 917,
+  &descriptor_table_Trackable_2eproto_initialized, descriptor_table_protodef_Trackable_2eproto, "Trackable.proto", 977,
   &descriptor_table_Trackable_2eproto_once, descriptor_table_Trackable_2eproto_sccs, descriptor_table_Trackable_2eproto_deps, 8, 0,
   schemas, file_default_instances, TableStruct_Trackable_2eproto::offsets,
   file_level_metadata_Trackable_2eproto, 8, file_level_enum_descriptors_Trackable_2eproto, file_level_service_descriptors_Trackable_2eproto,
@@ -1809,7 +1813,8 @@ Trackable::Trackable()
 }
 Trackable::Trackable(const Trackable& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      children_(from.children_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   cuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_cuid().empty()) {
@@ -1901,6 +1906,7 @@ void Trackable::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  children_.Clear();
   cuid_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   context_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -2025,6 +2031,18 @@ const char* Trackable::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // repeated .RTLSProtocol.Trackable children = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_children(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -2139,6 +2157,14 @@ failure:
         12, this->_internal_context(), target);
   }
 
+  // repeated .RTLSProtocol.Trackable children = 13;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_children_size()); i < n; i++) {
+    stream->EnsureSpace(&target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(13, this->_internal_children(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -2154,6 +2180,13 @@ size_t Trackable::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .RTLSProtocol.Trackable children = 13;
+  total_size += 1UL * this->_internal_children_size();
+  for (const auto& msg : this->children_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // bytes cuid = 2;
   if (this->cuid().size() > 0) {
@@ -2270,6 +2303,7 @@ void Trackable::MergeFrom(const Trackable& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  children_.MergeFrom(from.children_);
   if (from.cuid().size() > 0) {
 
     cuid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.cuid_);
@@ -2332,6 +2366,7 @@ bool Trackable::IsInitialized() const {
 void Trackable::InternalSwap(Trackable* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  children_.InternalSwap(&other->children_);
   cuid_.Swap(&other->cuid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -2372,6 +2407,10 @@ TrackableFrame::TrackableFrame(const TrackableFrame& from)
       _internal_metadata_(nullptr),
       trackables_(from.trackables_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  context_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_context().empty()) {
+    context_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.context_);
+  }
   ::memcpy(&frame_id_, &from.frame_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
     reinterpret_cast<char*>(&frame_id_)) + sizeof(timestamp_));
@@ -2380,6 +2419,7 @@ TrackableFrame::TrackableFrame(const TrackableFrame& from)
 
 void TrackableFrame::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TrackableFrame_Trackable_2eproto.base);
+  context_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&frame_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&timestamp_) -
       reinterpret_cast<char*>(&frame_id_)) + sizeof(timestamp_));
@@ -2391,6 +2431,7 @@ TrackableFrame::~TrackableFrame() {
 }
 
 void TrackableFrame::SharedDtor() {
+  context_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TrackableFrame::SetCachedSize(int size) const {
@@ -2409,6 +2450,7 @@ void TrackableFrame::Clear() {
   (void) cached_has_bits;
 
   trackables_.Clear();
+  context_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&frame_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&timestamp_) -
       reinterpret_cast<char*>(&frame_id_)) + sizeof(timestamp_));
@@ -2446,6 +2488,13 @@ const char* TrackableFrame::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bytes context = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_context(), ptr, ctx);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2494,6 +2543,12 @@ failure:
       InternalWriteMessageToArray(3, this->_internal_trackables(i), target, stream);
   }
 
+  // bytes context = 4;
+  if (this->context().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        4, this->_internal_context(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -2515,6 +2570,13 @@ size_t TrackableFrame::ByteSizeLong() const {
   for (const auto& msg : this->trackables_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // bytes context = 4;
+  if (this->context().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_context());
   }
 
   // uint64 frame_ID = 1;
@@ -2563,6 +2625,10 @@ void TrackableFrame::MergeFrom(const TrackableFrame& from) {
   (void) cached_has_bits;
 
   trackables_.MergeFrom(from.trackables_);
+  if (from.context().size() > 0) {
+
+    context_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.context_);
+  }
   if (from.frame_id() != 0) {
     _internal_set_frame_id(from._internal_frame_id());
   }
@@ -2593,6 +2659,8 @@ void TrackableFrame::InternalSwap(TrackableFrame* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   trackables_.InternalSwap(&other->trackables_);
+  context_.Swap(&other->context_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(frame_id_, other->frame_id_);
   swap(timestamp_, other->timestamp_);
 }

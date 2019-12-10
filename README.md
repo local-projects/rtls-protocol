@@ -26,12 +26,13 @@ Contains the data and metadata for a single trackable device, for a single frame
 | uint64 `frame_ID`                          | the sequential frame number. Can be used to determine order of messages when using UDP                                   |
 | uint64 `timestamp`                         | Unix timestamp in milliseconds. Can be used to manually calculate velocity, acceleration, jerk etc. from positional data |
 | bytes `context`                            | variable length field for any metadata for which a field does not already exist                                          |
+| repeated Trackable `children`              | a recursively defined array of `Trackable` messages, e.g. to group controllers under a headset                           |
 | Position `position`                        | the position of the Trackable, defined with `(double) x,y,z` coordinates                                                 |
 | Orientation `orientation`                  | the orientation of the Trackable, defined as a quaternion with `(double) x,y,z,w` coordinates                            |
 | Velocity `velocity`                        | the positional velocity of the Trackable defined with `(float) x,y,z` coordinates                                        |
 | Acceleration `acceleration`                | the positional acceleration of the Trackable defined with `(float) x,y,z` coordinates                                    |
-| AngularVelocity `angular_velocity`         | the angular velocity of the Trackable defined with `(float) x,y,z` coordinates                                           |
-| AngularAcceleration `angular_acceleration` | the angular accerlation of the Trackable defined with `(float) x,y,z` coordinates                                        |
+| AngularVelocity `angular_velocity`         | the angular velocity of the Trackable defined around `(float) x,y,z` axes                                                |
+| AngularAcceleration `angular_acceleration` | the angular accerlation of the Trackable defined around `(float) x,y,z` axes                                             |
 
 ## `TrackableFrame`
 
@@ -42,6 +43,7 @@ Contains the data and metadata for an array of trackable devices, for a single f
 | repeated Trackable `trackables` | an array of `Trackable` messages as defined above                                                                               |
 | uint64 `frame_ID`               | Same as for a `Trackable`. If all Trackables in a frame have the same `frame_ID`, it's more efficient to specify it once, here  |
 | uint64 `timestamp`              | Same as for a `Trackable`. If all Trackables in a frame have the same `timestamp`, it's more efficient to specify it once, here |
+| bytes `context`                 | variable length field for any metadata for which a field does not already exist                                                 |
 
 ## Compiling for C++, C#, Python (, Java, JavaScript, Objective-C, PHP, Ruby)
 

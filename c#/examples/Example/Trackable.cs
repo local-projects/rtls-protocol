@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace RTLS {
+namespace RTLSProtocol {
 
   /// <summary>Holder for reflection information generated from Trackable.proto</summary>
   public static partial class TrackableReflection {
@@ -24,35 +24,38 @@ namespace RTLS {
     static TrackableReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9UcmFja2FibGUucHJvdG8SBFJUTFMi1wUKCVRyYWNrYWJsZRIKCgJpZBgB",
-            "IAEoBRIMCgRjdWlkGAIgASgMEgwKBG5hbWUYAyABKAkSEAoIZnJhbWVfSUQY",
-            "CiABKAQSEQoJdGltZXN0YW1wGAsgASgEEg8KB2NvbnRleHQYDCABKAwSKgoI",
-            "cG9zaXRpb24YBCABKAsyGC5SVExTLlRyYWNrYWJsZS5Qb3NpdGlvbhIwCgtv",
-            "cmllbnRhdGlvbhgFIAEoCzIbLlJUTFMuVHJhY2thYmxlLk9yaWVudGF0aW9u",
-            "EioKCHZlbG9jaXR5GAYgASgLMhguUlRMUy5UcmFja2FibGUuVmVsb2NpdHkS",
-            "MgoMYWNjZWxlcmF0aW9uGAcgASgLMhwuUlRMUy5UcmFja2FibGUuQWNjZWxl",
-            "cmF0aW9uEjkKEGFuZ3VsYXJfdmVsb2NpdHkYCCABKAsyHy5SVExTLlRyYWNr",
-            "YWJsZS5Bbmd1bGFyVmVsb2NpdHkSQQoUYW5ndWxhcl9hY2NlbGVyYXRpb24Y",
-            "CSABKAsyIy5SVExTLlRyYWNrYWJsZS5Bbmd1bGFyQWNjZWxlcmF0aW9uGisK",
-            "CFBvc2l0aW9uEgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6GAMgASgBGjkK",
-            "C09yaWVudGF0aW9uEgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6GAMgASgB",
-            "EgkKAXcYBCABKAEaKwoIVmVsb2NpdHkSCQoBeBgBIAEoAhIJCgF5GAIgASgC",
-            "EgkKAXoYAyABKAIaLwoMQWNjZWxlcmF0aW9uEgkKAXgYASABKAISCQoBeRgC",
-            "IAEoAhIJCgF6GAMgASgCGjIKD0FuZ3VsYXJWZWxvY2l0eRIJCgF4GAEgASgC",
-            "EgkKAXkYAiABKAISCQoBehgDIAEoAho2ChNBbmd1bGFyQWNjZWxlcmF0aW9u",
-            "EgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCIloKDlRyYWNrYWJs",
-            "ZUZyYW1lEhAKCGZyYW1lX0lEGAEgASgEEhEKCXRpbWVzdGFtcBgCIAEoBBIj",
-            "Cgp0cmFja2FibGVzGAMgAygLMg8uUlRMUy5UcmFja2FibGViBnByb3RvMw=="));
+            "Cg9UcmFja2FibGUucHJvdG8SDFJUTFNQcm90b2NvbCKyBgoJVHJhY2thYmxl",
+            "EgoKAmlkGAEgASgFEgwKBGN1aWQYAiABKAwSDAoEbmFtZRgDIAEoCRIQCghm",
+            "cmFtZV9JRBgKIAEoBBIRCgl0aW1lc3RhbXAYCyABKAQSDwoHY29udGV4dBgM",
+            "IAEoDBIpCghjaGlsZHJlbhgNIAMoCzIXLlJUTFNQcm90b2NvbC5UcmFja2Fi",
+            "bGUSMgoIcG9zaXRpb24YBCABKAsyIC5SVExTUHJvdG9jb2wuVHJhY2thYmxl",
+            "LlBvc2l0aW9uEjgKC29yaWVudGF0aW9uGAUgASgLMiMuUlRMU1Byb3RvY29s",
+            "LlRyYWNrYWJsZS5PcmllbnRhdGlvbhIyCgh2ZWxvY2l0eRgGIAEoCzIgLlJU",
+            "TFNQcm90b2NvbC5UcmFja2FibGUuVmVsb2NpdHkSOgoMYWNjZWxlcmF0aW9u",
+            "GAcgASgLMiQuUlRMU1Byb3RvY29sLlRyYWNrYWJsZS5BY2NlbGVyYXRpb24S",
+            "QQoQYW5ndWxhcl92ZWxvY2l0eRgIIAEoCzInLlJUTFNQcm90b2NvbC5UcmFj",
+            "a2FibGUuQW5ndWxhclZlbG9jaXR5EkkKFGFuZ3VsYXJfYWNjZWxlcmF0aW9u",
+            "GAkgASgLMisuUlRMU1Byb3RvY29sLlRyYWNrYWJsZS5Bbmd1bGFyQWNjZWxl",
+            "cmF0aW9uGisKCFBvc2l0aW9uEgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6",
+            "GAMgASgBGjkKC09yaWVudGF0aW9uEgkKAXgYASABKAESCQoBeRgCIAEoARIJ",
+            "CgF6GAMgASgBEgkKAXcYBCABKAEaKwoIVmVsb2NpdHkSCQoBeBgBIAEoAhIJ",
+            "CgF5GAIgASgCEgkKAXoYAyABKAIaLwoMQWNjZWxlcmF0aW9uEgkKAXgYASAB",
+            "KAISCQoBeRgCIAEoAhIJCgF6GAMgASgCGjIKD0FuZ3VsYXJWZWxvY2l0eRIJ",
+            "CgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAho2ChNBbmd1bGFyQWNj",
+            "ZWxlcmF0aW9uEgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCInMK",
+            "DlRyYWNrYWJsZUZyYW1lEhAKCGZyYW1lX0lEGAEgASgEEhEKCXRpbWVzdGFt",
+            "cBgCIAEoBBIrCgp0cmFja2FibGVzGAMgAygLMhcuUlRMU1Byb3RvY29sLlRy",
+            "YWNrYWJsZRIPCgdjb250ZXh0GAQgASgMYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable), global::RTLS.Trackable.Parser, new[]{ "Id", "Cuid", "Name", "FrameID", "Timestamp", "Context", "Position", "Orientation", "Velocity", "Acceleration", "AngularVelocity", "AngularAcceleration" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable.Types.Position), global::RTLS.Trackable.Types.Position.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable.Types.Orientation), global::RTLS.Trackable.Types.Orientation.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable.Types.Velocity), global::RTLS.Trackable.Types.Velocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable.Types.Acceleration), global::RTLS.Trackable.Types.Acceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable.Types.AngularVelocity), global::RTLS.Trackable.Types.AngularVelocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.Trackable.Types.AngularAcceleration), global::RTLS.Trackable.Types.AngularAcceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLS.TrackableFrame), global::RTLS.TrackableFrame.Parser, new[]{ "FrameID", "Timestamp", "Trackables" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable), global::RTLSProtocol.Trackable.Parser, new[]{ "Id", "Cuid", "Name", "FrameID", "Timestamp", "Context", "Children", "Position", "Orientation", "Velocity", "Acceleration", "AngularVelocity", "AngularAcceleration" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Position), global::RTLSProtocol.Trackable.Types.Position.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Orientation), global::RTLSProtocol.Trackable.Types.Orientation.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Velocity), global::RTLSProtocol.Trackable.Types.Velocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Acceleration), global::RTLSProtocol.Trackable.Types.Acceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularVelocity), global::RTLSProtocol.Trackable.Types.AngularVelocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularAcceleration), global::RTLSProtocol.Trackable.Types.AngularAcceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.TrackableFrame), global::RTLSProtocol.TrackableFrame.Parser, new[]{ "FrameID", "Timestamp", "Trackables", "Context" }, null, null, null)
           }));
     }
     #endregion
@@ -67,7 +70,7 @@ namespace RTLS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RTLS.TrackableReflection.Descriptor.MessageTypes[0]; }
+      get { return global::RTLSProtocol.TrackableReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -90,6 +93,7 @@ namespace RTLS {
       frameID_ = other.frameID_;
       timestamp_ = other.timestamp_;
       context_ = other.context_;
+      children_ = other.children_.Clone();
       position_ = other.position_ != null ? other.position_.Clone() : null;
       orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
       velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
@@ -185,11 +189,24 @@ namespace RTLS {
       }
     }
 
+    /// <summary>Field number for the "children" field.</summary>
+    public const int ChildrenFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::RTLSProtocol.Trackable> _repeated_children_codec
+        = pb::FieldCodec.ForMessage(106, global::RTLSProtocol.Trackable.Parser);
+    private readonly pbc::RepeatedField<global::RTLSProtocol.Trackable> children_ = new pbc::RepeatedField<global::RTLSProtocol.Trackable>();
+    /// <summary>
+    /// recursive array of Trackables, e.g. if you want to group controllers under a headset
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::RTLSProtocol.Trackable> Children {
+      get { return children_; }
+    }
+
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 4;
-    private global::RTLS.Trackable.Types.Position position_;
+    private global::RTLSProtocol.Trackable.Types.Position position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RTLS.Trackable.Types.Position Position {
+    public global::RTLSProtocol.Trackable.Types.Position Position {
       get { return position_; }
       set {
         position_ = value;
@@ -198,9 +215,9 @@ namespace RTLS {
 
     /// <summary>Field number for the "orientation" field.</summary>
     public const int OrientationFieldNumber = 5;
-    private global::RTLS.Trackable.Types.Orientation orientation_;
+    private global::RTLSProtocol.Trackable.Types.Orientation orientation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RTLS.Trackable.Types.Orientation Orientation {
+    public global::RTLSProtocol.Trackable.Types.Orientation Orientation {
       get { return orientation_; }
       set {
         orientation_ = value;
@@ -209,9 +226,9 @@ namespace RTLS {
 
     /// <summary>Field number for the "velocity" field.</summary>
     public const int VelocityFieldNumber = 6;
-    private global::RTLS.Trackable.Types.Velocity velocity_;
+    private global::RTLSProtocol.Trackable.Types.Velocity velocity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RTLS.Trackable.Types.Velocity Velocity {
+    public global::RTLSProtocol.Trackable.Types.Velocity Velocity {
       get { return velocity_; }
       set {
         velocity_ = value;
@@ -220,9 +237,9 @@ namespace RTLS {
 
     /// <summary>Field number for the "acceleration" field.</summary>
     public const int AccelerationFieldNumber = 7;
-    private global::RTLS.Trackable.Types.Acceleration acceleration_;
+    private global::RTLSProtocol.Trackable.Types.Acceleration acceleration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RTLS.Trackable.Types.Acceleration Acceleration {
+    public global::RTLSProtocol.Trackable.Types.Acceleration Acceleration {
       get { return acceleration_; }
       set {
         acceleration_ = value;
@@ -231,9 +248,9 @@ namespace RTLS {
 
     /// <summary>Field number for the "angular_velocity" field.</summary>
     public const int AngularVelocityFieldNumber = 8;
-    private global::RTLS.Trackable.Types.AngularVelocity angularVelocity_;
+    private global::RTLSProtocol.Trackable.Types.AngularVelocity angularVelocity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RTLS.Trackable.Types.AngularVelocity AngularVelocity {
+    public global::RTLSProtocol.Trackable.Types.AngularVelocity AngularVelocity {
       get { return angularVelocity_; }
       set {
         angularVelocity_ = value;
@@ -242,9 +259,9 @@ namespace RTLS {
 
     /// <summary>Field number for the "angular_acceleration" field.</summary>
     public const int AngularAccelerationFieldNumber = 9;
-    private global::RTLS.Trackable.Types.AngularAcceleration angularAcceleration_;
+    private global::RTLSProtocol.Trackable.Types.AngularAcceleration angularAcceleration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RTLS.Trackable.Types.AngularAcceleration AngularAcceleration {
+    public global::RTLSProtocol.Trackable.Types.AngularAcceleration AngularAcceleration {
       get { return angularAcceleration_; }
       set {
         angularAcceleration_ = value;
@@ -270,6 +287,7 @@ namespace RTLS {
       if (FrameID != other.FrameID) return false;
       if (Timestamp != other.Timestamp) return false;
       if (Context != other.Context) return false;
+      if(!children_.Equals(other.children_)) return false;
       if (!object.Equals(Position, other.Position)) return false;
       if (!object.Equals(Orientation, other.Orientation)) return false;
       if (!object.Equals(Velocity, other.Velocity)) return false;
@@ -288,6 +306,7 @@ namespace RTLS {
       if (FrameID != 0UL) hash ^= FrameID.GetHashCode();
       if (Timestamp != 0UL) hash ^= Timestamp.GetHashCode();
       if (Context.Length != 0) hash ^= Context.GetHashCode();
+      hash ^= children_.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
       if (orientation_ != null) hash ^= Orientation.GetHashCode();
       if (velocity_ != null) hash ^= Velocity.GetHashCode();
@@ -355,6 +374,7 @@ namespace RTLS {
         output.WriteRawTag(98);
         output.WriteBytes(Context);
       }
+      children_.WriteTo(output, _repeated_children_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -381,6 +401,7 @@ namespace RTLS {
       if (Context.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Context);
       }
+      size += children_.CalculateSize(_repeated_children_codec);
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
@@ -428,39 +449,40 @@ namespace RTLS {
       if (other.Context.Length != 0) {
         Context = other.Context;
       }
+      children_.Add(other.children_);
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::RTLS.Trackable.Types.Position();
+          Position = new global::RTLSProtocol.Trackable.Types.Position();
         }
         Position.MergeFrom(other.Position);
       }
       if (other.orientation_ != null) {
         if (orientation_ == null) {
-          Orientation = new global::RTLS.Trackable.Types.Orientation();
+          Orientation = new global::RTLSProtocol.Trackable.Types.Orientation();
         }
         Orientation.MergeFrom(other.Orientation);
       }
       if (other.velocity_ != null) {
         if (velocity_ == null) {
-          Velocity = new global::RTLS.Trackable.Types.Velocity();
+          Velocity = new global::RTLSProtocol.Trackable.Types.Velocity();
         }
         Velocity.MergeFrom(other.Velocity);
       }
       if (other.acceleration_ != null) {
         if (acceleration_ == null) {
-          Acceleration = new global::RTLS.Trackable.Types.Acceleration();
+          Acceleration = new global::RTLSProtocol.Trackable.Types.Acceleration();
         }
         Acceleration.MergeFrom(other.Acceleration);
       }
       if (other.angularVelocity_ != null) {
         if (angularVelocity_ == null) {
-          AngularVelocity = new global::RTLS.Trackable.Types.AngularVelocity();
+          AngularVelocity = new global::RTLSProtocol.Trackable.Types.AngularVelocity();
         }
         AngularVelocity.MergeFrom(other.AngularVelocity);
       }
       if (other.angularAcceleration_ != null) {
         if (angularAcceleration_ == null) {
-          AngularAcceleration = new global::RTLS.Trackable.Types.AngularAcceleration();
+          AngularAcceleration = new global::RTLSProtocol.Trackable.Types.AngularAcceleration();
         }
         AngularAcceleration.MergeFrom(other.AngularAcceleration);
       }
@@ -489,42 +511,42 @@ namespace RTLS {
           }
           case 34: {
             if (position_ == null) {
-              Position = new global::RTLS.Trackable.Types.Position();
+              Position = new global::RTLSProtocol.Trackable.Types.Position();
             }
             input.ReadMessage(Position);
             break;
           }
           case 42: {
             if (orientation_ == null) {
-              Orientation = new global::RTLS.Trackable.Types.Orientation();
+              Orientation = new global::RTLSProtocol.Trackable.Types.Orientation();
             }
             input.ReadMessage(Orientation);
             break;
           }
           case 50: {
             if (velocity_ == null) {
-              Velocity = new global::RTLS.Trackable.Types.Velocity();
+              Velocity = new global::RTLSProtocol.Trackable.Types.Velocity();
             }
             input.ReadMessage(Velocity);
             break;
           }
           case 58: {
             if (acceleration_ == null) {
-              Acceleration = new global::RTLS.Trackable.Types.Acceleration();
+              Acceleration = new global::RTLSProtocol.Trackable.Types.Acceleration();
             }
             input.ReadMessage(Acceleration);
             break;
           }
           case 66: {
             if (angularVelocity_ == null) {
-              AngularVelocity = new global::RTLS.Trackable.Types.AngularVelocity();
+              AngularVelocity = new global::RTLSProtocol.Trackable.Types.AngularVelocity();
             }
             input.ReadMessage(AngularVelocity);
             break;
           }
           case 74: {
             if (angularAcceleration_ == null) {
-              AngularAcceleration = new global::RTLS.Trackable.Types.AngularAcceleration();
+              AngularAcceleration = new global::RTLSProtocol.Trackable.Types.AngularAcceleration();
             }
             input.ReadMessage(AngularAcceleration);
             break;
@@ -539,6 +561,10 @@ namespace RTLS {
           }
           case 98: {
             Context = input.ReadBytes();
+            break;
+          }
+          case 106: {
+            children_.AddEntriesFrom(input, _repeated_children_codec);
             break;
           }
         }
@@ -557,7 +583,7 @@ namespace RTLS {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::RTLS.Trackable.Descriptor.NestedTypes[0]; }
+          get { return global::RTLSProtocol.Trackable.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -742,7 +768,7 @@ namespace RTLS {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::RTLS.Trackable.Descriptor.NestedTypes[1]; }
+          get { return global::RTLSProtocol.Trackable.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -955,7 +981,7 @@ namespace RTLS {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::RTLS.Trackable.Descriptor.NestedTypes[2]; }
+          get { return global::RTLSProtocol.Trackable.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1140,7 +1166,7 @@ namespace RTLS {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::RTLS.Trackable.Descriptor.NestedTypes[3]; }
+          get { return global::RTLSProtocol.Trackable.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1325,7 +1351,7 @@ namespace RTLS {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::RTLS.Trackable.Descriptor.NestedTypes[4]; }
+          get { return global::RTLSProtocol.Trackable.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1510,7 +1536,7 @@ namespace RTLS {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::RTLS.Trackable.Descriptor.NestedTypes[5]; }
+          get { return global::RTLSProtocol.Trackable.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1700,7 +1726,7 @@ namespace RTLS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RTLS.TrackableReflection.Descriptor.MessageTypes[1]; }
+      get { return global::RTLSProtocol.TrackableReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1720,6 +1746,7 @@ namespace RTLS {
       frameID_ = other.frameID_;
       timestamp_ = other.timestamp_;
       trackables_ = other.trackables_.Clone();
+      context_ = other.context_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1752,12 +1779,23 @@ namespace RTLS {
 
     /// <summary>Field number for the "trackables" field.</summary>
     public const int TrackablesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::RTLS.Trackable> _repeated_trackables_codec
-        = pb::FieldCodec.ForMessage(26, global::RTLS.Trackable.Parser);
-    private readonly pbc::RepeatedField<global::RTLS.Trackable> trackables_ = new pbc::RepeatedField<global::RTLS.Trackable>();
+    private static readonly pb::FieldCodec<global::RTLSProtocol.Trackable> _repeated_trackables_codec
+        = pb::FieldCodec.ForMessage(26, global::RTLSProtocol.Trackable.Parser);
+    private readonly pbc::RepeatedField<global::RTLSProtocol.Trackable> trackables_ = new pbc::RepeatedField<global::RTLSProtocol.Trackable>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::RTLS.Trackable> Trackables {
+    public pbc::RepeatedField<global::RTLSProtocol.Trackable> Trackables {
       get { return trackables_; }
+    }
+
+    /// <summary>Field number for the "context" field.</summary>
+    public const int ContextFieldNumber = 4;
+    private pb::ByteString context_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Context {
+      get { return context_; }
+      set {
+        context_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1776,6 +1814,7 @@ namespace RTLS {
       if (FrameID != other.FrameID) return false;
       if (Timestamp != other.Timestamp) return false;
       if(!trackables_.Equals(other.trackables_)) return false;
+      if (Context != other.Context) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1785,6 +1824,7 @@ namespace RTLS {
       if (FrameID != 0UL) hash ^= FrameID.GetHashCode();
       if (Timestamp != 0UL) hash ^= Timestamp.GetHashCode();
       hash ^= trackables_.GetHashCode();
+      if (Context.Length != 0) hash ^= Context.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1807,6 +1847,10 @@ namespace RTLS {
         output.WriteUInt64(Timestamp);
       }
       trackables_.WriteTo(output, _repeated_trackables_codec);
+      if (Context.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(Context);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1822,6 +1866,9 @@ namespace RTLS {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Timestamp);
       }
       size += trackables_.CalculateSize(_repeated_trackables_codec);
+      if (Context.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Context);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1840,6 +1887,9 @@ namespace RTLS {
         Timestamp = other.Timestamp;
       }
       trackables_.Add(other.trackables_);
+      if (other.Context.Length != 0) {
+        Context = other.Context;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1861,6 +1911,10 @@ namespace RTLS {
           }
           case 26: {
             trackables_.AddEntriesFrom(input, _repeated_trackables_codec);
+            break;
+          }
+          case 34: {
+            Context = input.ReadBytes();
             break;
           }
         }

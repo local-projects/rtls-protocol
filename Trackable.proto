@@ -9,6 +9,7 @@ message Trackable {
     uint64 frame_ID = 10;
     uint64 timestamp = 11; // Unix timestamp in milliseconds
     bytes context = 12; // variable length field for any extra information
+    repeated Trackable children = 13; // recursive array of Trackables, e.g. if you want to group controllers under a headset
 
     message Position {
         double x = 1;
@@ -64,4 +65,5 @@ message TrackableFrame {
     uint64 frame_ID = 1;
     uint64 timestamp = 2;
     repeated Trackable trackables = 3;
+    bytes context = 4;
 }

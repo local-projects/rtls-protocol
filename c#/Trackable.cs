@@ -24,37 +24,38 @@ namespace RTLSProtocol {
     static TrackableReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9UcmFja2FibGUucHJvdG8SDFJUTFNQcm90b2NvbCKHBgoJVHJhY2thYmxl",
+            "Cg9UcmFja2FibGUucHJvdG8SDFJUTFNQcm90b2NvbCKyBgoJVHJhY2thYmxl",
             "EgoKAmlkGAEgASgFEgwKBGN1aWQYAiABKAwSDAoEbmFtZRgDIAEoCRIQCghm",
             "cmFtZV9JRBgKIAEoBBIRCgl0aW1lc3RhbXAYCyABKAQSDwoHY29udGV4dBgM",
-            "IAEoDBIyCghwb3NpdGlvbhgEIAEoCzIgLlJUTFNQcm90b2NvbC5UcmFja2Fi",
-            "bGUuUG9zaXRpb24SOAoLb3JpZW50YXRpb24YBSABKAsyIy5SVExTUHJvdG9j",
-            "b2wuVHJhY2thYmxlLk9yaWVudGF0aW9uEjIKCHZlbG9jaXR5GAYgASgLMiAu",
-            "UlRMU1Byb3RvY29sLlRyYWNrYWJsZS5WZWxvY2l0eRI6CgxhY2NlbGVyYXRp",
-            "b24YByABKAsyJC5SVExTUHJvdG9jb2wuVHJhY2thYmxlLkFjY2VsZXJhdGlv",
-            "bhJBChBhbmd1bGFyX3ZlbG9jaXR5GAggASgLMicuUlRMU1Byb3RvY29sLlRy",
-            "YWNrYWJsZS5Bbmd1bGFyVmVsb2NpdHkSSQoUYW5ndWxhcl9hY2NlbGVyYXRp",
-            "b24YCSABKAsyKy5SVExTUHJvdG9jb2wuVHJhY2thYmxlLkFuZ3VsYXJBY2Nl",
-            "bGVyYXRpb24aKwoIUG9zaXRpb24SCQoBeBgBIAEoARIJCgF5GAIgASgBEgkK",
-            "AXoYAyABKAEaOQoLT3JpZW50YXRpb24SCQoBeBgBIAEoARIJCgF5GAIgASgB",
-            "EgkKAXoYAyABKAESCQoBdxgEIAEoARorCghWZWxvY2l0eRIJCgF4GAEgASgC",
-            "EgkKAXkYAiABKAISCQoBehgDIAEoAhovCgxBY2NlbGVyYXRpb24SCQoBeBgB",
-            "IAEoAhIJCgF5GAIgASgCEgkKAXoYAyABKAIaMgoPQW5ndWxhclZlbG9jaXR5",
-            "EgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCGjYKE0FuZ3VsYXJB",
-            "Y2NlbGVyYXRpb24SCQoBeBgBIAEoAhIJCgF5GAIgASgCEgkKAXoYAyABKAIi",
-            "YgoOVHJhY2thYmxlRnJhbWUSEAoIZnJhbWVfSUQYASABKAQSEQoJdGltZXN0",
-            "YW1wGAIgASgEEisKCnRyYWNrYWJsZXMYAyADKAsyFy5SVExTUHJvdG9jb2wu",
-            "VHJhY2thYmxlYgZwcm90bzM="));
+            "IAEoDBIpCghjaGlsZHJlbhgNIAMoCzIXLlJUTFNQcm90b2NvbC5UcmFja2Fi",
+            "bGUSMgoIcG9zaXRpb24YBCABKAsyIC5SVExTUHJvdG9jb2wuVHJhY2thYmxl",
+            "LlBvc2l0aW9uEjgKC29yaWVudGF0aW9uGAUgASgLMiMuUlRMU1Byb3RvY29s",
+            "LlRyYWNrYWJsZS5PcmllbnRhdGlvbhIyCgh2ZWxvY2l0eRgGIAEoCzIgLlJU",
+            "TFNQcm90b2NvbC5UcmFja2FibGUuVmVsb2NpdHkSOgoMYWNjZWxlcmF0aW9u",
+            "GAcgASgLMiQuUlRMU1Byb3RvY29sLlRyYWNrYWJsZS5BY2NlbGVyYXRpb24S",
+            "QQoQYW5ndWxhcl92ZWxvY2l0eRgIIAEoCzInLlJUTFNQcm90b2NvbC5UcmFj",
+            "a2FibGUuQW5ndWxhclZlbG9jaXR5EkkKFGFuZ3VsYXJfYWNjZWxlcmF0aW9u",
+            "GAkgASgLMisuUlRMU1Byb3RvY29sLlRyYWNrYWJsZS5Bbmd1bGFyQWNjZWxl",
+            "cmF0aW9uGisKCFBvc2l0aW9uEgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6",
+            "GAMgASgBGjkKC09yaWVudGF0aW9uEgkKAXgYASABKAESCQoBeRgCIAEoARIJ",
+            "CgF6GAMgASgBEgkKAXcYBCABKAEaKwoIVmVsb2NpdHkSCQoBeBgBIAEoAhIJ",
+            "CgF5GAIgASgCEgkKAXoYAyABKAIaLwoMQWNjZWxlcmF0aW9uEgkKAXgYASAB",
+            "KAISCQoBeRgCIAEoAhIJCgF6GAMgASgCGjIKD0FuZ3VsYXJWZWxvY2l0eRIJ",
+            "CgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAho2ChNBbmd1bGFyQWNj",
+            "ZWxlcmF0aW9uEgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCInMK",
+            "DlRyYWNrYWJsZUZyYW1lEhAKCGZyYW1lX0lEGAEgASgEEhEKCXRpbWVzdGFt",
+            "cBgCIAEoBBIrCgp0cmFja2FibGVzGAMgAygLMhcuUlRMU1Byb3RvY29sLlRy",
+            "YWNrYWJsZRIPCgdjb250ZXh0GAQgASgMYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable), global::RTLSProtocol.Trackable.Parser, new[]{ "Id", "Cuid", "Name", "FrameID", "Timestamp", "Context", "Position", "Orientation", "Velocity", "Acceleration", "AngularVelocity", "AngularAcceleration" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Position), global::RTLSProtocol.Trackable.Types.Position.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable), global::RTLSProtocol.Trackable.Parser, new[]{ "Id", "Cuid", "Name", "FrameID", "Timestamp", "Context", "Children", "Position", "Orientation", "Velocity", "Acceleration", "AngularVelocity", "AngularAcceleration" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Position), global::RTLSProtocol.Trackable.Types.Position.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Orientation), global::RTLSProtocol.Trackable.Types.Orientation.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Velocity), global::RTLSProtocol.Trackable.Types.Velocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Acceleration), global::RTLSProtocol.Trackable.Types.Acceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularVelocity), global::RTLSProtocol.Trackable.Types.AngularVelocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularAcceleration), global::RTLSProtocol.Trackable.Types.AngularAcceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.TrackableFrame), global::RTLSProtocol.TrackableFrame.Parser, new[]{ "FrameID", "Timestamp", "Trackables" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.TrackableFrame), global::RTLSProtocol.TrackableFrame.Parser, new[]{ "FrameID", "Timestamp", "Trackables", "Context" }, null, null, null)
           }));
     }
     #endregion
@@ -92,6 +93,7 @@ namespace RTLSProtocol {
       frameID_ = other.frameID_;
       timestamp_ = other.timestamp_;
       context_ = other.context_;
+      children_ = other.children_.Clone();
       position_ = other.position_ != null ? other.position_.Clone() : null;
       orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
       velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
@@ -187,6 +189,19 @@ namespace RTLSProtocol {
       }
     }
 
+    /// <summary>Field number for the "children" field.</summary>
+    public const int ChildrenFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::RTLSProtocol.Trackable> _repeated_children_codec
+        = pb::FieldCodec.ForMessage(106, global::RTLSProtocol.Trackable.Parser);
+    private readonly pbc::RepeatedField<global::RTLSProtocol.Trackable> children_ = new pbc::RepeatedField<global::RTLSProtocol.Trackable>();
+    /// <summary>
+    /// recursive array of Trackables, e.g. if you want to group controllers under a headset
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::RTLSProtocol.Trackable> Children {
+      get { return children_; }
+    }
+
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 4;
     private global::RTLSProtocol.Trackable.Types.Position position_;
@@ -272,6 +287,7 @@ namespace RTLSProtocol {
       if (FrameID != other.FrameID) return false;
       if (Timestamp != other.Timestamp) return false;
       if (Context != other.Context) return false;
+      if(!children_.Equals(other.children_)) return false;
       if (!object.Equals(Position, other.Position)) return false;
       if (!object.Equals(Orientation, other.Orientation)) return false;
       if (!object.Equals(Velocity, other.Velocity)) return false;
@@ -290,6 +306,7 @@ namespace RTLSProtocol {
       if (FrameID != 0UL) hash ^= FrameID.GetHashCode();
       if (Timestamp != 0UL) hash ^= Timestamp.GetHashCode();
       if (Context.Length != 0) hash ^= Context.GetHashCode();
+      hash ^= children_.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
       if (orientation_ != null) hash ^= Orientation.GetHashCode();
       if (velocity_ != null) hash ^= Velocity.GetHashCode();
@@ -357,6 +374,7 @@ namespace RTLSProtocol {
         output.WriteRawTag(98);
         output.WriteBytes(Context);
       }
+      children_.WriteTo(output, _repeated_children_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -383,6 +401,7 @@ namespace RTLSProtocol {
       if (Context.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Context);
       }
+      size += children_.CalculateSize(_repeated_children_codec);
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
@@ -430,6 +449,7 @@ namespace RTLSProtocol {
       if (other.Context.Length != 0) {
         Context = other.Context;
       }
+      children_.Add(other.children_);
       if (other.position_ != null) {
         if (position_ == null) {
           Position = new global::RTLSProtocol.Trackable.Types.Position();
@@ -541,6 +561,10 @@ namespace RTLSProtocol {
           }
           case 98: {
             Context = input.ReadBytes();
+            break;
+          }
+          case 106: {
+            children_.AddEntriesFrom(input, _repeated_children_codec);
             break;
           }
         }
@@ -1722,6 +1746,7 @@ namespace RTLSProtocol {
       frameID_ = other.frameID_;
       timestamp_ = other.timestamp_;
       trackables_ = other.trackables_.Clone();
+      context_ = other.context_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1762,6 +1787,17 @@ namespace RTLSProtocol {
       get { return trackables_; }
     }
 
+    /// <summary>Field number for the "context" field.</summary>
+    public const int ContextFieldNumber = 4;
+    private pb::ByteString context_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Context {
+      get { return context_; }
+      set {
+        context_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as TrackableFrame);
@@ -1778,6 +1814,7 @@ namespace RTLSProtocol {
       if (FrameID != other.FrameID) return false;
       if (Timestamp != other.Timestamp) return false;
       if(!trackables_.Equals(other.trackables_)) return false;
+      if (Context != other.Context) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1787,6 +1824,7 @@ namespace RTLSProtocol {
       if (FrameID != 0UL) hash ^= FrameID.GetHashCode();
       if (Timestamp != 0UL) hash ^= Timestamp.GetHashCode();
       hash ^= trackables_.GetHashCode();
+      if (Context.Length != 0) hash ^= Context.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1809,6 +1847,10 @@ namespace RTLSProtocol {
         output.WriteUInt64(Timestamp);
       }
       trackables_.WriteTo(output, _repeated_trackables_codec);
+      if (Context.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(Context);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1824,6 +1866,9 @@ namespace RTLSProtocol {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Timestamp);
       }
       size += trackables_.CalculateSize(_repeated_trackables_codec);
+      if (Context.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Context);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1842,6 +1887,9 @@ namespace RTLSProtocol {
         Timestamp = other.Timestamp;
       }
       trackables_.Add(other.trackables_);
+      if (other.Context.Length != 0) {
+        Context = other.Context;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1863,6 +1911,10 @@ namespace RTLSProtocol {
           }
           case 26: {
             trackables_.AddEntriesFrom(input, _repeated_trackables_codec);
+            break;
+          }
+          case 34: {
+            Context = input.ReadBytes();
             break;
           }
         }

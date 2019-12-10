@@ -12,6 +12,8 @@ If you want to optimize memory usage and improve performace, checkout [Arena All
 
 ## Installation and usage
 
+[Official C++ installation guide](https://github.com/protocolbuffers/protobuf/tree/master/src). Below is a simple usage guide which assumes that the C++ `protobuf` runtime libraries are already installed.
+
 If you installed `protoc` via a package manager, it probably already installed the C++ Protobuf library too.
 You can check with:
 

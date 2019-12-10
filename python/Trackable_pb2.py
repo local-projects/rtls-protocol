@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='RTLSProtocol',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0fTrackable.proto\x12\x0cRTLSProtocol\"\x87\x06\n\tTrackable\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04\x63uid\x18\x02 \x01(\x0c\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08\x66rame_ID\x18\n \x01(\x04\x12\x11\n\ttimestamp\x18\x0b \x01(\x04\x12\x0f\n\x07\x63ontext\x18\x0c \x01(\x0c\x12\x32\n\x08position\x18\x04 \x01(\x0b\x32 .RTLSProtocol.Trackable.Position\x12\x38\n\x0borientation\x18\x05 \x01(\x0b\x32#.RTLSProtocol.Trackable.Orientation\x12\x32\n\x08velocity\x18\x06 \x01(\x0b\x32 .RTLSProtocol.Trackable.Velocity\x12:\n\x0c\x61\x63\x63\x65leration\x18\x07 \x01(\x0b\x32$.RTLSProtocol.Trackable.Acceleration\x12\x41\n\x10\x61ngular_velocity\x18\x08 \x01(\x0b\x32\'.RTLSProtocol.Trackable.AngularVelocity\x12I\n\x14\x61ngular_acceleration\x18\t \x01(\x0b\x32+.RTLSProtocol.Trackable.AngularAcceleration\x1a+\n\x08Position\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x1a\x39\n\x0bOrientation\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x12\t\n\x01w\x18\x04 \x01(\x01\x1a+\n\x08Velocity\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x1a/\n\x0c\x41\x63\x63\x65leration\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x1a\x32\n\x0f\x41ngularVelocity\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x1a\x36\n\x13\x41ngularAcceleration\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"b\n\x0eTrackableFrame\x12\x10\n\x08\x66rame_ID\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12+\n\ntrackables\x18\x03 \x03(\x0b\x32\x17.RTLSProtocol.Trackableb\x06proto3')
+  serialized_pb=_b('\n\x0fTrackable.proto\x12\x0cRTLSProtocol\"\xb2\x06\n\tTrackable\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04\x63uid\x18\x02 \x01(\x0c\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08\x66rame_ID\x18\n \x01(\x04\x12\x11\n\ttimestamp\x18\x0b \x01(\x04\x12\x0f\n\x07\x63ontext\x18\x0c \x01(\x0c\x12)\n\x08\x63hildren\x18\r \x03(\x0b\x32\x17.RTLSProtocol.Trackable\x12\x32\n\x08position\x18\x04 \x01(\x0b\x32 .RTLSProtocol.Trackable.Position\x12\x38\n\x0borientation\x18\x05 \x01(\x0b\x32#.RTLSProtocol.Trackable.Orientation\x12\x32\n\x08velocity\x18\x06 \x01(\x0b\x32 .RTLSProtocol.Trackable.Velocity\x12:\n\x0c\x61\x63\x63\x65leration\x18\x07 \x01(\x0b\x32$.RTLSProtocol.Trackable.Acceleration\x12\x41\n\x10\x61ngular_velocity\x18\x08 \x01(\x0b\x32\'.RTLSProtocol.Trackable.AngularVelocity\x12I\n\x14\x61ngular_acceleration\x18\t \x01(\x0b\x32+.RTLSProtocol.Trackable.AngularAcceleration\x1a+\n\x08Position\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x1a\x39\n\x0bOrientation\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x12\t\n\x01w\x18\x04 \x01(\x01\x1a+\n\x08Velocity\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x1a/\n\x0c\x41\x63\x63\x65leration\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x1a\x32\n\x0f\x41ngularVelocity\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x1a\x36\n\x13\x41ngularAcceleration\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"s\n\x0eTrackableFrame\x12\x10\n\x08\x66rame_ID\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12+\n\ntrackables\x18\x03 \x03(\x0b\x32\x17.RTLSProtocol.Trackable\x12\x0f\n\x07\x63ontext\x18\x04 \x01(\x0c\x62\x06proto3')
 )
 
 
@@ -66,8 +66,8 @@ _TRACKABLE_POSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=505,
-  serialized_end=548,
+  serialized_start=548,
+  serialized_end=591,
 )
 
 _TRACKABLE_ORIENTATION = _descriptor.Descriptor(
@@ -117,8 +117,8 @@ _TRACKABLE_ORIENTATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=550,
-  serialized_end=607,
+  serialized_start=593,
+  serialized_end=650,
 )
 
 _TRACKABLE_VELOCITY = _descriptor.Descriptor(
@@ -161,8 +161,8 @@ _TRACKABLE_VELOCITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=609,
-  serialized_end=652,
+  serialized_start=652,
+  serialized_end=695,
 )
 
 _TRACKABLE_ACCELERATION = _descriptor.Descriptor(
@@ -205,8 +205,8 @@ _TRACKABLE_ACCELERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=654,
-  serialized_end=701,
+  serialized_start=697,
+  serialized_end=744,
 )
 
 _TRACKABLE_ANGULARVELOCITY = _descriptor.Descriptor(
@@ -249,8 +249,8 @@ _TRACKABLE_ANGULARVELOCITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=703,
-  serialized_end=753,
+  serialized_start=746,
+  serialized_end=796,
 )
 
 _TRACKABLE_ANGULARACCELERATION = _descriptor.Descriptor(
@@ -293,8 +293,8 @@ _TRACKABLE_ANGULARACCELERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=755,
-  serialized_end=809,
+  serialized_start=798,
+  serialized_end=852,
 )
 
 _TRACKABLE = _descriptor.Descriptor(
@@ -347,42 +347,49 @@ _TRACKABLE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='position', full_name='RTLSProtocol.Trackable.position', index=6,
+      name='children', full_name='RTLSProtocol.Trackable.children', index=6,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='position', full_name='RTLSProtocol.Trackable.position', index=7,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='orientation', full_name='RTLSProtocol.Trackable.orientation', index=7,
+      name='orientation', full_name='RTLSProtocol.Trackable.orientation', index=8,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='velocity', full_name='RTLSProtocol.Trackable.velocity', index=8,
+      name='velocity', full_name='RTLSProtocol.Trackable.velocity', index=9,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='acceleration', full_name='RTLSProtocol.Trackable.acceleration', index=9,
+      name='acceleration', full_name='RTLSProtocol.Trackable.acceleration', index=10,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='angular_velocity', full_name='RTLSProtocol.Trackable.angular_velocity', index=10,
+      name='angular_velocity', full_name='RTLSProtocol.Trackable.angular_velocity', index=11,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='angular_acceleration', full_name='RTLSProtocol.Trackable.angular_acceleration', index=11,
+      name='angular_acceleration', full_name='RTLSProtocol.Trackable.angular_acceleration', index=12,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -401,7 +408,7 @@ _TRACKABLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=809,
+  serialized_end=852,
 )
 
 
@@ -433,6 +440,13 @@ _TRACKABLEFRAME = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='context', full_name='RTLSProtocol.TrackableFrame.context', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -445,8 +459,8 @@ _TRACKABLEFRAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=811,
-  serialized_end=909,
+  serialized_start=854,
+  serialized_end=969,
 )
 
 _TRACKABLE_POSITION.containing_type = _TRACKABLE
@@ -455,6 +469,7 @@ _TRACKABLE_VELOCITY.containing_type = _TRACKABLE
 _TRACKABLE_ACCELERATION.containing_type = _TRACKABLE
 _TRACKABLE_ANGULARVELOCITY.containing_type = _TRACKABLE
 _TRACKABLE_ANGULARACCELERATION.containing_type = _TRACKABLE
+_TRACKABLE.fields_by_name['children'].message_type = _TRACKABLE
 _TRACKABLE.fields_by_name['position'].message_type = _TRACKABLE_POSITION
 _TRACKABLE.fields_by_name['orientation'].message_type = _TRACKABLE_ORIENTATION
 _TRACKABLE.fields_by_name['velocity'].message_type = _TRACKABLE_VELOCITY

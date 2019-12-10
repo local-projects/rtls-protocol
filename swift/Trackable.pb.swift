@@ -59,6 +59,12 @@ struct RTLSProtocol_Trackable {
     set {_uniqueStorage()._context = newValue}
   }
 
+  /// recursive array of Trackables, e.g. if you want to group controllers under a headset
+  var children: [RTLSProtocol_Trackable] {
+    get {return _storage._children}
+    set {_uniqueStorage()._children = newValue}
+  }
+
   var position: RTLSProtocol_Trackable.Position {
     get {return _storage._position ?? RTLSProtocol_Trackable.Position()}
     set {_uniqueStorage()._position = newValue}
@@ -229,6 +235,8 @@ struct RTLSProtocol_TrackableFrame {
 
   var trackables: [RTLSProtocol_Trackable] = []
 
+  var context: Data = SwiftProtobuf.Internal.emptyData
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -247,6 +255,7 @@ extension RTLSProtocol_Trackable: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     10: .standard(proto: "frame_ID"),
     11: .same(proto: "timestamp"),
     12: .same(proto: "context"),
+    13: .same(proto: "children"),
     4: .same(proto: "position"),
     5: .same(proto: "orientation"),
     6: .same(proto: "velocity"),
@@ -262,6 +271,7 @@ extension RTLSProtocol_Trackable: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     var _frameID: UInt64 = 0
     var _timestamp: UInt64 = 0
     var _context: Data = SwiftProtobuf.Internal.emptyData
+    var _children: [RTLSProtocol_Trackable] = []
     var _position: RTLSProtocol_Trackable.Position? = nil
     var _orientation: RTLSProtocol_Trackable.Orientation? = nil
     var _velocity: RTLSProtocol_Trackable.Velocity? = nil
@@ -280,6 +290,7 @@ extension RTLSProtocol_Trackable: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       _frameID = source._frameID
       _timestamp = source._timestamp
       _context = source._context
+      _children = source._children
       _position = source._position
       _orientation = source._orientation
       _velocity = source._velocity
@@ -313,6 +324,7 @@ extension RTLSProtocol_Trackable: SwiftProtobuf.Message, SwiftProtobuf._MessageI
         case 10: try decoder.decodeSingularUInt64Field(value: &_storage._frameID)
         case 11: try decoder.decodeSingularUInt64Field(value: &_storage._timestamp)
         case 12: try decoder.decodeSingularBytesField(value: &_storage._context)
+        case 13: try decoder.decodeRepeatedMessageField(value: &_storage._children)
         default: break
         }
       }
@@ -357,6 +369,9 @@ extension RTLSProtocol_Trackable: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       if !_storage._context.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._context, fieldNumber: 12)
       }
+      if !_storage._children.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._children, fieldNumber: 13)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -372,6 +387,7 @@ extension RTLSProtocol_Trackable: SwiftProtobuf.Message, SwiftProtobuf._MessageI
         if _storage._frameID != rhs_storage._frameID {return false}
         if _storage._timestamp != rhs_storage._timestamp {return false}
         if _storage._context != rhs_storage._context {return false}
+        if _storage._children != rhs_storage._children {return false}
         if _storage._position != rhs_storage._position {return false}
         if _storage._orientation != rhs_storage._orientation {return false}
         if _storage._velocity != rhs_storage._velocity {return false}
@@ -645,6 +661,7 @@ extension RTLSProtocol_TrackableFrame: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .standard(proto: "frame_ID"),
     2: .same(proto: "timestamp"),
     3: .same(proto: "trackables"),
+    4: .same(proto: "context"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -653,6 +670,7 @@ extension RTLSProtocol_TrackableFrame: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 1: try decoder.decodeSingularUInt64Field(value: &self.frameID)
       case 2: try decoder.decodeSingularUInt64Field(value: &self.timestamp)
       case 3: try decoder.decodeRepeatedMessageField(value: &self.trackables)
+      case 4: try decoder.decodeSingularBytesField(value: &self.context)
       default: break
       }
     }
@@ -668,6 +686,9 @@ extension RTLSProtocol_TrackableFrame: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.trackables.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.trackables, fieldNumber: 3)
     }
+    if !self.context.isEmpty {
+      try visitor.visitSingularBytesField(value: self.context, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -675,6 +696,7 @@ extension RTLSProtocol_TrackableFrame: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.frameID != rhs.frameID {return false}
     if lhs.timestamp != rhs.timestamp {return false}
     if lhs.trackables != rhs.trackables {return false}
+    if lhs.context != rhs.context {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

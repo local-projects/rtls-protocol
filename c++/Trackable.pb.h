@@ -1118,6 +1118,7 @@ class Trackable :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kChildrenFieldNumber = 13,
     kCuidFieldNumber = 2,
     kNameFieldNumber = 3,
     kContextFieldNumber = 12,
@@ -1131,6 +1132,24 @@ class Trackable :
     kTimestampFieldNumber = 11,
     kIdFieldNumber = 1,
   };
+  // repeated .RTLSProtocol.Trackable children = 13;
+  int children_size() const;
+  private:
+  int _internal_children_size() const;
+  public:
+  void clear_children();
+  ::RTLSProtocol::Trackable* mutable_children(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable >*
+      mutable_children();
+  private:
+  const ::RTLSProtocol::Trackable& _internal_children(int index) const;
+  ::RTLSProtocol::Trackable* _internal_add_children();
+  public:
+  const ::RTLSProtocol::Trackable& children(int index) const;
+  ::RTLSProtocol::Trackable* add_children();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable >&
+      children() const;
+
   // bytes cuid = 2;
   void clear_cuid();
   const std::string& cuid() const;
@@ -1301,6 +1320,7 @@ class Trackable :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable > children_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr context_;
@@ -1425,6 +1445,7 @@ class TrackableFrame :
 
   enum : int {
     kTrackablesFieldNumber = 3,
+    kContextFieldNumber = 4,
     kFrameIDFieldNumber = 1,
     kTimestampFieldNumber = 2,
   };
@@ -1445,6 +1466,22 @@ class TrackableFrame :
   ::RTLSProtocol::Trackable* add_trackables();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable >&
       trackables() const;
+
+  // bytes context = 4;
+  void clear_context();
+  const std::string& context() const;
+  void set_context(const std::string& value);
+  void set_context(std::string&& value);
+  void set_context(const char* value);
+  void set_context(const void* value, size_t size);
+  std::string* mutable_context();
+  std::string* release_context();
+  void set_allocated_context(std::string* context);
+  private:
+  const std::string& _internal_context() const;
+  void _internal_set_context(const std::string& value);
+  std::string* _internal_mutable_context();
+  public:
 
   // uint64 frame_ID = 1;
   void clear_frame_id();
@@ -1470,6 +1507,7 @@ class TrackableFrame :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable > trackables_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr context_;
   ::PROTOBUF_NAMESPACE_ID::uint64 frame_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2130,6 +2168,45 @@ inline void Trackable::set_allocated_context(std::string* context) {
   // @@protoc_insertion_point(field_set_allocated:RTLSProtocol.Trackable.context)
 }
 
+// repeated .RTLSProtocol.Trackable children = 13;
+inline int Trackable::_internal_children_size() const {
+  return children_.size();
+}
+inline int Trackable::children_size() const {
+  return _internal_children_size();
+}
+inline void Trackable::clear_children() {
+  children_.Clear();
+}
+inline ::RTLSProtocol::Trackable* Trackable::mutable_children(int index) {
+  // @@protoc_insertion_point(field_mutable:RTLSProtocol.Trackable.children)
+  return children_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable >*
+Trackable::mutable_children() {
+  // @@protoc_insertion_point(field_mutable_list:RTLSProtocol.Trackable.children)
+  return &children_;
+}
+inline const ::RTLSProtocol::Trackable& Trackable::_internal_children(int index) const {
+  return children_.Get(index);
+}
+inline const ::RTLSProtocol::Trackable& Trackable::children(int index) const {
+  // @@protoc_insertion_point(field_get:RTLSProtocol.Trackable.children)
+  return _internal_children(index);
+}
+inline ::RTLSProtocol::Trackable* Trackable::_internal_add_children() {
+  return children_.Add();
+}
+inline ::RTLSProtocol::Trackable* Trackable::add_children() {
+  // @@protoc_insertion_point(field_add:RTLSProtocol.Trackable.children)
+  return _internal_add_children();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackable >&
+Trackable::children() const {
+  // @@protoc_insertion_point(field_list:RTLSProtocol.Trackable.children)
+  return children_;
+}
+
 // .RTLSProtocol.Trackable.Position position = 4;
 inline bool Trackable::_internal_has_position() const {
   return this != internal_default_instance() && position_ != nullptr;
@@ -2571,6 +2648,66 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::RTLSProtocol::Trackabl
 TrackableFrame::trackables() const {
   // @@protoc_insertion_point(field_list:RTLSProtocol.TrackableFrame.trackables)
   return trackables_;
+}
+
+// bytes context = 4;
+inline void TrackableFrame::clear_context() {
+  context_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& TrackableFrame::context() const {
+  // @@protoc_insertion_point(field_get:RTLSProtocol.TrackableFrame.context)
+  return _internal_context();
+}
+inline void TrackableFrame::set_context(const std::string& value) {
+  _internal_set_context(value);
+  // @@protoc_insertion_point(field_set:RTLSProtocol.TrackableFrame.context)
+}
+inline std::string* TrackableFrame::mutable_context() {
+  // @@protoc_insertion_point(field_mutable:RTLSProtocol.TrackableFrame.context)
+  return _internal_mutable_context();
+}
+inline const std::string& TrackableFrame::_internal_context() const {
+  return context_.GetNoArena();
+}
+inline void TrackableFrame::_internal_set_context(const std::string& value) {
+  
+  context_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void TrackableFrame::set_context(std::string&& value) {
+  
+  context_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:RTLSProtocol.TrackableFrame.context)
+}
+inline void TrackableFrame::set_context(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  context_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:RTLSProtocol.TrackableFrame.context)
+}
+inline void TrackableFrame::set_context(const void* value, size_t size) {
+  
+  context_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:RTLSProtocol.TrackableFrame.context)
+}
+inline std::string* TrackableFrame::_internal_mutable_context() {
+  
+  return context_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* TrackableFrame::release_context() {
+  // @@protoc_insertion_point(field_release:RTLSProtocol.TrackableFrame.context)
+  
+  return context_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void TrackableFrame::set_allocated_context(std::string* context) {
+  if (context != nullptr) {
+    
+  } else {
+    
+  }
+  context_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), context);
+  // @@protoc_insertion_point(field_set_allocated:RTLSProtocol.TrackableFrame.context)
 }
 
 #ifdef __GNUC__

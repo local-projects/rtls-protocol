@@ -1,6 +1,6 @@
 ﻿using System;
 using Google.Protobuf;
-using RTLS;
+using RTLSProtocol;
 
 namespace Example
 {
@@ -41,7 +41,7 @@ namespace Example
             };
             frame.Trackables.Add(trackable2);
 
-            // You can use DebugString to inspect messages at any time
+            // You can use ToString() to inspect messages at any time
             Console.WriteLine("DEBUG STRING");
             Console.WriteLine("------------");
             Console.WriteLine(frame.ToString());
@@ -63,7 +63,6 @@ namespace Example
             Console.WriteLine("Frame ID: {0}", frame.FrameID);
             Console.WriteLine();
 
-            // Print individual fields
             foreach (Trackable trackable in frame.Trackables)
             {
                 Console.WriteLine("Name: {0}", trackable.Name);
