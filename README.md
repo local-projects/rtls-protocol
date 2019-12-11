@@ -79,7 +79,7 @@ See if the language you want is listed [here](https://github.com/protocolbuffers
 
 ## Usage
 
-See the `examples` folder in each language's directory to get a sense of how to use the protocol. Essentially, you
+See the example in each language's directory to get a sense of how to use the protocol. Essentially, you
 package up all your information into a `Trackable` object or `TrackableFrame` object, serialize it, and send it.
 On the receiving end, you deserialize to get back the object, and from there you can inspect it's fields.
 
