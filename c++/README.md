@@ -34,6 +34,6 @@ See source code and Makefile in the examples folder for more details.
 
 ## Running the example
 
-    cd examples/
+    cd example/
     make
     ./example_c++

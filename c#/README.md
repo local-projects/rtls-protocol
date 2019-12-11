@@ -24,6 +24,6 @@ In your source code, just add:
 
 ## Running the example
 
-    cd examples/Example/
+    cd Example/
     dotnet build Example.csproj
     mono /PATH/TO/EXECUTABLE   # might be a .dll
