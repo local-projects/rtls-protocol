@@ -12,16 +12,22 @@ If you want to optimize memory usage and improve performace, checkout [Arena All
 
 ## Installation and usage
 
-[Official C++ installation guide](https://github.com/protocolbuffers/protobuf/tree/master/src). Below is a simple usage guide which assumes that the C++ `protobuf` runtime libraries are already installed.
+[Official C++ installation guide](https://github.com/protocolbuffers/protobuf/tree/master/src). Quick start guide is below:
 
-If you installed `protoc` via a package manager, it probably already installed the C++ Protobuf library too.
-You can check with:
+### Mac installation
 
-    pkg-config --cflags protobuf
+    brew install protobuf
 
-which will fail if you don't have the library installed.
+### Windows(x64) installation
 
-If you don't have the library, you can [build it from source](https://github.com/protocolbuffers/protobuf/tree/master/src).
+First, get [vcpkg](https://github.com/microsoft/vcpkg).
+
+Then:
+
+    vcpkg install protobuf protobuf:x64-windows
+    vcpkg integrate install
+
+### Usage
 
 In your source code, make sure to include `Trackable.pb.h`, and add `using namespace RTLS;`
 right after.

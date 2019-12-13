@@ -48,14 +48,14 @@ namespace RTLSProtocol {
             "YWNrYWJsZRIPCgdjb250ZXh0GAQgASgMYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable), global::RTLSProtocol.Trackable.Parser, new[]{ "Id", "Cuid", "Name", "FrameID", "Timestamp", "Context", "Children", "Position", "Orientation", "Velocity", "Acceleration", "AngularVelocity", "AngularAcceleration" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Position), global::RTLSProtocol.Trackable.Types.Position.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Orientation), global::RTLSProtocol.Trackable.Types.Orientation.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Velocity), global::RTLSProtocol.Trackable.Types.Velocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Acceleration), global::RTLSProtocol.Trackable.Types.Acceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularVelocity), global::RTLSProtocol.Trackable.Types.AngularVelocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularAcceleration), global::RTLSProtocol.Trackable.Types.AngularAcceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.TrackableFrame), global::RTLSProtocol.TrackableFrame.Parser, new[]{ "FrameID", "Timestamp", "Trackables", "Context" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable), global::RTLSProtocol.Trackable.Parser, new[]{ "Id", "Cuid", "Name", "FrameID", "Timestamp", "Context", "Children", "Position", "Orientation", "Velocity", "Acceleration", "AngularVelocity", "AngularAcceleration" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Position), global::RTLSProtocol.Trackable.Types.Position.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Orientation), global::RTLSProtocol.Trackable.Types.Orientation.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Velocity), global::RTLSProtocol.Trackable.Types.Velocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.Acceleration), global::RTLSProtocol.Trackable.Types.Acceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularVelocity), global::RTLSProtocol.Trackable.Types.AngularVelocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.Trackable.Types.AngularAcceleration), global::RTLSProtocol.Trackable.Types.AngularAcceleration.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RTLSProtocol.TrackableFrame), global::RTLSProtocol.TrackableFrame.Parser, new[]{ "FrameID", "Timestamp", "Trackables", "Context" }, null, null, null, null)
           }));
     }
     #endregion
