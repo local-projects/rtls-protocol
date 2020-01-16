@@ -47,6 +47,7 @@ namespace Example
             Console.WriteLine(frame.ToString());
             Console.WriteLine();
 
+            // Serialize the data as an array of bytes
             byte[] serialized = frame.ToByteArray();
             return serialized;
         }

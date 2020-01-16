@@ -36,6 +36,7 @@ func buildAndSerializeTrackableFrame() -> Data {
 	print(frame)
 	print("")
 	
+	// Serialize the data to binary
 	let serialized = try! frame.serializedData()
 	return serialized
 }

@@ -29,6 +29,7 @@ def buildAndSerializeTrackableFrame():
     print(frame)
     print("")
 
+    # Serialize the data as a string of bytes
     serialized = frame.SerializeToString()
     return serialized
 
