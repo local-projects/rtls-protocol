@@ -45,7 +45,7 @@ Contains the data and metadata for an array of trackable devices, for a single f
 | uint64 `timestamp`              | Same as for a `Trackable`. If all Trackables in a frame have the same `timestamp`, it's more efficient to specify it once, here |
 | bytes `context`                 | variable length field for any metadata for which a field does not already exist                                                 |
 
-## Compiling for C++, C#, Python (, Java, JavaScript, Objective-C, PHP, Ruby)
+## Compiling for C++, C#, Python (, Java, Objective-C, PHP, Ruby)
 
 First, make sure you have the `protoc` compiler installed. You can download it [here](https://developers.google.com/protocol-buffers/docs/downloads.html).
 
@@ -62,6 +62,15 @@ This will generate files (in the respective directory) that define `Trackable` a
 You can find the language option flags for other languages with a quick
 
     protoc -h
+
+## Compiling for JavaScript
+The process is mostly the same as above. The only difference is that you need to add an option to tell the compiler whether you want Closure imports or CommonJS imports (the normal `require()` way). You also need to add a `binary` option to make sure the serialize/deserialize methods get generated.
+
+For CommonJS imports:
+
+    protoc --js_out=import_style=commonjs,binary:js Trackable.proto
+
+For more info, see [here](https://github.com/protocolbuffers/protobuf/tree/master/js).
 
 ## Compiling for Swift
 
