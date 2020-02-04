@@ -1,4 +1,4 @@
-# RTLS Protocol - C\
+# RTLS Protocol - C\#
 
 `Trackable.cs` contains the class definitions for `Trackable` and `TrackableFrame`
 for use with C# programs and applications.
