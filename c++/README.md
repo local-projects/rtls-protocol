@@ -43,6 +43,6 @@ See source code and Makefile in the examples folder for more details.
 On Mac:
     cd example/
     make
-    ./example_c++
+    ./example_c++.out
 
 On Windows, compile with CMake
