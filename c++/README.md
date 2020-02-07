@@ -40,6 +40,9 @@ See source code and Makefile in the examples folder for more details.
 
 ## Running the example
 
+On Mac:
     cd example/
     make
     ./example_c++
+
+On Windows, compile with CMake
