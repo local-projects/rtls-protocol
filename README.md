@@ -4,6 +4,9 @@ This is a [Google Protobuf](https://developers.google.com/protocol-buffers) impl
 (loosely based on [RTTrP](https://rttrp.github.io/RTTrP-Wiki/index.html)) for sending and receiving real-time
 tracking data obtained from hardware such as HTC Vive, Oculus or other custom location-tracking hardware devices.
 
+Install on windows using `choco install protoc`
+
+
 ## Overview
 
 The protocol is defined in `Trackable.proto` and consists of two main "message" types
