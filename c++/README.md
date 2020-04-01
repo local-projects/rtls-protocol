@@ -20,12 +20,29 @@ If you want to optimize memory usage and improve performace, checkout [Arena All
 
 ### Windows(x64) installation
 
-First, get [vcpkg](https://github.com/microsoft/vcpkg).
-
-Then:
-
-    vcpkg install protobuf protobuf:x64-windows
-    vcpkg integrate install
+1. Install [vcpkg](https://github.com/microsoft/vcpkg). 
+    1. Open Git Bash. Navigate to the "C:/" directory and create a "dev" directory if it doesn't exist. Navigate into the "dev" directory".
+        ```bash
+        cd C:/
+        mkdir -p dev
+        cd dev
+    2. Clone the vcpkg repo and navigate into it.
+        ```bash
+        git clone https://github.com/Microsoft/vcpkg.git
+        cd vcpkg
+        ```
+    3. Open a Powershell window in admin mode and navigate to the vcpkg directory. Then, run the following commands. This will create a vcpkg binary and install it system-wide.
+        ```bash
+        cd C:\dev\vcpkg
+        .\bootstrap-vcpkg.bat
+        .\vcpkg integrate install
+        ```
+2. In a Powershell window, navigate to the vcpkg directory (if not already there) and install the protobuf packages.
+    ```bash
+    cd C:\dev\vcpkg
+    .\vcpkg install protobuf protobuf:x64-windows
+    .\vcpkg integrate install
+    ```
 
 ### Usage
 
