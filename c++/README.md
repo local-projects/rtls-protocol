@@ -38,12 +38,20 @@ If you want to optimize memory usage and improve performace, checkout [Arena All
         .\vcpkg integrate install
         setx VCPKG "C:\dev\vcpkg" /M
         ```
-2. In a Powershell window, navigate to the vcpkg directory (if not already there) and install the protobuf packages.
-    ```bash
-    cd C:\dev\vcpkg
-    .\vcpkg install protobuf protobuf:x64-windows
-    .\vcpkg integrate install
-    ```
+2. Install protobuf.
+    1. In a Powershell window, navigate to the vcpkg directory (if not already there) and install the protobuf packages.
+        ```bash
+        cd C:\dev\vcpkg
+        .\vcpkg install protobuf protobuf:x64-windows
+        ```
+    2. If you would like to automatically link any vcpkg packages to c++ VS projects, then make vcpkg accessible system-wide with the following command.
+        ```bash
+        .\vcpkg integrate install
+        ```
+    Sometimes, system-wide installation produces strange behaviors in Visual Studio projects. In those cases, it may be wise to forgoe this and manually include any headers, libs and dlls. Disabling system wide integration consists of the following command:
+        ```bash
+        .\vcpkg integrate remove
+        ```
 
 ### Usage
 
