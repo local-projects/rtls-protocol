@@ -31,11 +31,12 @@ If you want to optimize memory usage and improve performace, checkout [Arena All
         git clone https://github.com/Microsoft/vcpkg.git
         cd vcpkg
         ```
-    3. Open a Powershell window in admin mode and navigate to the vcpkg directory. Then, run the following commands. This will create a vcpkg binary and install it system-wide.
+    3. Open a Powershell window in admin mode and navigate to the vcpkg directory. Then, run the following commands. This will create a vcpkg binary and install it system-wide. The last command will set a system-wide variable `VCPKG` to the location of vcpkg.
         ```bash
         cd C:\dev\vcpkg
         .\bootstrap-vcpkg.bat
         .\vcpkg integrate install
+        setx VCPKG "C:\dev\vcpkg" /M
         ```
 2. In a Powershell window, navigate to the vcpkg directory (if not already there) and install the protobuf packages.
     ```bash
