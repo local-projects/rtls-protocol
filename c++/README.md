@@ -20,31 +20,25 @@ If you want to optimize memory usage and improve performace, checkout [Arena All
 
 ### Windows(x64) installation
 
-1. Install [vcpkg](https://github.com/microsoft/vcpkg). 
-    1. Open Git Bash. Navigate to the "C:/" directory and create a "dev" directory if it doesn't exist. Navigate into the "dev" directory". Clone the vcpkg repo and navigate into it.
-        ```bash
-        cd C:/; mkdir -p dev; cd dev
-        git clone https://github.com/Microsoft/vcpkg.git
-        cd vcpkg
-        ```
-    2. Open a Powershell window in admin mode and navigate to the vcpkg directory. Then, run the following commands. This will create a vcpkg binary.The last command will set a system-wide variable `VCPKG` to the location of vcpkg.
-        ```bash
-        cd C:\dev\vcpkg
-        .\bootstrap-vcpkg.bat
-        setx VCPKG "C:\dev\vcpkg" /M
-        ```
+Complete these steps in a Powershell window in admin mode.
+1. Install [vcpkg](https://github.com/microsoft/vcpkg). Run the following commands. They will clone the vcpkg repo into the dev directory, then build vcpkg. The last command will set a system-wide variable `VCPKG` to the location of vcpkg.
+    ```bash
+    git clone https://github.com/Microsoft/vcpkg.git C:\dev\vcpkg
+    C:\dev\vcpkg\bootstrap-vcpkg.bat
+    setx VCPKG "C:\dev\vcpkg" /M
+    ```
 2. Install protobuf. In a Powershell window, navigate to the vcpkg directory (if not already there) and install the protobuf packages.
     ```bash
-    .\vcpkg install protobuf protobuf:x64-windows
+    C:\dev\vcpkg\vcpkg install protobuf protobuf:x64-windows
     ```
 3. Link Packages. 
     If you would like Visual Studio to automatically link packages to your project, then use the following command in Powershell to make accessible system-wide with the following command. (Note: Sometimes, system-wide installation produces strange behaviors in Visual Studio projects.)
     ```bash
-    .\vcpkg integrate install
+    C:\dev\vcpkg\vcpkg integrate install
     ```
     Otherwiese, if you would like to manually include the packages, disable systemwide integration with the following command.
     ```bash
-    .\vcpkg integrate remove
+    C:\dev\vcpkg\vcpkg integrate remove
     ```
 
 ### Usage
