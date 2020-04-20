@@ -50,7 +50,7 @@ Contains the data and metadata for an array of trackable devices, for a single f
 ## Compiling for C++, C#, Python (, Java, Objective-C, PHP, Ruby)
 
 First, make sure you have the `protoc` compiler installed. You can download it [here](https://developers.google.com/protocol-buffers/docs/downloads.html).  
-Or Install on windows using `choco install protoc`
+Alternatively, install on Windows using `choco install protoc`, or on Mac using `brew install protobuf`.
 
 Now, make sure you are in the root of the repo, and then run:
 
