@@ -4,6 +4,8 @@ This is a [Google Protobuf](https://developers.google.com/protocol-buffers) impl
 (loosely based on [RTTrP](https://rttrp.github.io/RTTrP-Wiki/index.html)) for sending and receiving real-time
 tracking data obtained from hardware such as HTC Vive, Oculus or other custom location-tracking hardware devices.
 
+Note: The files in this repo have been verified to work with Protobuf runtime v3.11.0 and v3.11.3. Versions of Protobuf older than v3.11.0 **will not** work. Versions of Protobuf newer than v3.11.3 **may not** work.
+
 ## Overview
 
 The protocol is defined in `Trackable.proto` and consists of two main "message" types
